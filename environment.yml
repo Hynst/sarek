@@ -39,3 +39,4 @@ dependencies:
   - bioconda::vcftools=0.1.16=he513fc3_4
   - conda-forge::pigz=2.3.4=hed695b0_1
   - conda-forge::r-ggplot2=3.3.0=r40h6115d3f_1
+  - bioconda::sambamba=0.5.9=1
