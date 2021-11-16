@@ -442,6 +442,7 @@ process get_software_versions {
     trim_galore -v &> v_trim_galore.txt 2>&1 || true
     vcftools --version &> v_vcftools.txt 2>&1 || true
     vep --help &> v_vep.txt 2>&1 || true
+    sambamba --version &> v_sambamba.txt 2>&1 || true 
 
     scrape_software_versions.py &> software_versions_mqc.yaml
     """
