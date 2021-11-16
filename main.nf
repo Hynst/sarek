@@ -3708,7 +3708,6 @@ process VEP {
         --cache_version ${cache_version} \
         --dir_cache ${dir_cache} \
         --everything \
-        --filter_common \
         --fork ${task.cpus} \
         --format vcf \
         --per_gene \
