@@ -30,6 +30,7 @@ dependencies:
   - bioconda::multiqc=1.8=py_2
   - bioconda::qualimap=2.2.2d=1
   - bioconda::samblaster=0.1.24=hc9558a2_3
+  - bioconda::sambamba=0.5.9=1
   - bioconda::samtools=1.9=h10a08f8_12
   - bioconda::snpeff=4.3.1t=0
   - bioconda::strelka=2.9.10=0
@@ -39,4 +40,4 @@ dependencies:
   - bioconda::vcftools=0.1.16=he513fc3_4
   - conda-forge::pigz=2.3.4=hed695b0_1
   - conda-forge::r-ggplot2=3.3.0=r40h6115d3f_1
-  - bioconda::sambamba=0.5.9=1
+
