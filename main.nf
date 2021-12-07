@@ -1062,6 +1062,7 @@ process MapReads {
     ${convertToFastq}
     ${aligner} mem -K 100000000 -R \"${readGroup}\" ${extra} -t ${task.cpus} -M ${fasta} \
     ${input} | \
+    sambamba view -f bam /dev/stdin | \
     sambamba sort -t ${task.cpus} -m 8GB -o ${idSample}_${idRun}.bam /dev/stdin
     """
 }
