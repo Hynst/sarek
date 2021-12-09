@@ -10,7 +10,9 @@
      <br /> `cp ../custon.config .`
      <br /> `mkdir ./tmp`
   3) Edit nextflow.config - launchDir
-     <br /> `k8s {
+     <br />
+
+`k8s {
                  namespace = 'acgt-ns'
                  runAsUser = 1000
                  launchDir = '/mnt/run/RUN_FOLDER'
