@@ -12,7 +12,7 @@
   3) Edit nextflow.config - launchDir
      <br />
 
-`k8s {
+	`k8s {
                  namespace = 'acgt-ns'
                  runAsUser = 1000
                  launchDir = '/mnt/run/RUN_FOLDER'
@@ -34,3 +34,14 @@
      <br /> `nextflow kuberun https://github.com/Hynst/sarek -pod-image 'cerit.io/nextflow:21.09.1' -v 'pvc-acgt:/mnt' \
 	-w /mnt/run/RUN_FOLDER/tmp -c custom.config --input /mnt/shared/Sarek_configs/YOUR_SAMPLE_CONFIG \
 	--genome GRCh38 --skip_markduplicates --tools HaplotypeCaller,VEP,Manta --igenomes_base /mnt/igenome/ --max_time 240.h`
+  6) Run nextflow (somatic variant analysis) with our custom Sarek pipeline for https://github.com/Hynst/sarek
+     <br /> `nextflow kuberun https://github.com/Hynst/sarek -pod-image 'cerit.io/nextflow:21.09.1' -v 'pvc-acgt:/mnt' \
+        -w /mnt/run/RUN_FOLDER/tmp -c custom.config --input /mnt/shared/Sarek_configs/YOUR_SAMPLE_CONFIG \
+	--genome GRCh38 --tools FreeBayes,Strelka,Mutect2 --igenomes_base /mnt/igenome/ --max_time 480.h`
+
+## Resume analysis:
+   1) Copy again nextflow.config and edit launchDir
+   2) Run nextflow command with -resume
+      <br /> `nextflow kuberun https://github.com/Hynst/sarek -pod-image 'cerit.io/nextflow:21.09.1' -v 'pvc-acgt:/mnt' \
+        -w /mnt/run/RUN_FOLDER/tmp -c custom.config --input /mnt/shared/Sarek_configs/YOUR_SAMPLE_CONFIG \
+	--genome GRCh38 --tools FreeBayes,Strelka,Mutect2 --igenomes_base /mnt/igenome/ --max_time 480.h -resume`
