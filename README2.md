@@ -7,7 +7,7 @@
      <br /> `cd ./RUN_FOLDER` 
  2) Copy nextflow.config and custom.config files, create /tmp dir
      <br /> `cp ../nextflow.config .`
-     <br /> `cp ../custon.config .`
+     <br /> `cp ../custom.config .`
      <br /> `mkdir ./tmp`
   3) Edit nextflow.config - launchDir
    
@@ -30,7 +30,7 @@
              }
      ```
 
-  4) Create TSV sample config according https://nf-co.re/sarek/2.7.1/usage#tsv-file in /mnt/shared/Sarek_configs
+  4) Create TSV sample config according to https://nf-co.re/sarek/2.7.1/usage#tsv-file in /mnt/shared/Sarek_configs
   5) Run nextflow (for ACGT germline variant analysis) with our custom Sarek pipeline for https://github.com/Hynst/sarek 
       ```
       nextflow kuberun https://github.com/Hynst/sarek -pod-image 'cerit.io/nextflow:21.09.1' -v 'pvc-acgt:/mnt' \
