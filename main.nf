@@ -3683,6 +3683,7 @@ process VEP {
         file(cadd_InDels_tbi) from ch_cadd_indels_tbi
         file(cadd_WG_SNVs) from ch_cadd_wg_snvs
         file(cadd_WG_SNVs_tbi) from ch_cadd_wg_snvs_tbi
+	file(fasta) from ch_fasta
 
     output:
         set variantCaller, idSample, file("${reducedVCF}_VEP.ann.vcf") into vepVCF
@@ -3716,7 +3717,8 @@ process VEP {
         --per_gene \
         --stats_file ${reducedVCF}_VEP.summary.html \
         --total_length \
-        --vcf
+        --vcf \
+	--fasta ${fasta}
 
     rm -rf ${reducedVCF}
     """
