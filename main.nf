@@ -3694,6 +3694,7 @@ process VEP {
     script:
     reducedVCF = reduceVCF(vcf.fileName)
     genome = params.genome == 'smallGRCh37' ? 'GRCh37' : params.genome
+    fasta = params.genomes[params.genome].fasta
 
     dir_cache = (params.vep_cache && params.annotation_cache) ? " \${PWD}/${dataDir}" : "/.vep"
     cadd = (params.cadd_cache && params.cadd_wg_snvs && params.cadd_indels) ? "--plugin CADD,whole_genome_SNVs.tsv.gz,InDels.tsv.gz" : ""
