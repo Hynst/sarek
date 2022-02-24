@@ -3715,7 +3715,6 @@ process VEP {
         --everything \
         --fork ${task.cpus} \
         --format vcf \
-        --per_gene \
         --stats_file ${reducedVCF}_VEP.summary.html \
         --total_length \
         --vcf \
