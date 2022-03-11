@@ -3712,6 +3712,7 @@ process VEP {
         --cache \
         --cache_version ${cache_version} \
         --dir_cache ${dir_cache} \
+        --merged \
         --everything \
         --fork ${task.cpus} \
         --format vcf \
