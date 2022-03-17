@@ -23,10 +23,10 @@ docker-build:
   script:
     - |
       if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
-        tag=":jh_sarek_v1"
-        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'jh_sarek_v1'"
+        tag=":jh_sarek_v2"
+        echo "Running on default branch '$CI_DEFAULT_BRANCH': tag = 'jh_sarek_v2'"
       else
-        tag=":jh_sarek_v1"
+        tag=":jh_sarek_v2"
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
     - docker build --pull -t "$CI_REGISTRY_IMAGE${tag}" .
