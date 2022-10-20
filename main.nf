@@ -1235,7 +1235,7 @@ tsv_bam_indexed_sample
 // STEP 2: MARKING DUPLICATES
 
 process MarkDuplicates {
-    label 'cpus_16'
+    cpus 4
 
     tag "${idPatient}-${idSample}"
 
@@ -1529,7 +1529,7 @@ bamApplyBQSR = bamApplyBQSR.dump(tag:'BAM + BAI + RECAL TABLE + INT')
 
 process ApplyBQSR {
     label 'memory_singleCPU_2_task'
-    label 'cpus_2'
+    cpus 1
 
     tag "${idPatient}-${idSample}-${intervalBed.baseName}"
 
@@ -1670,7 +1670,7 @@ tsv_sentieon_recal_sample
 // STEP 4.5: MERGING THE RECALIBRATED BAM FILES
 
 process MergeBamRecal {
-    label 'cpus_8'
+    cpus 1
 
     tag "${idPatient}-${idSample}"
 
@@ -1749,7 +1749,7 @@ tsv_bam_recalibrated_sample
 // STEP 5: QC
 
 process SamtoolsStats {
-    label 'cpus_2'
+    cpus 1
 
     tag "${idPatient}-${idSample}"
 
@@ -1775,7 +1775,7 @@ bamBamQC = bamMappedBamQC.mix(bam_recalibrated_bamqc)
 
 process BamQC {
     label 'memory_max'
-    label 'cpus_16'
+    cpus 9
 
     tag "${idPatient}-${idSample}"
 
@@ -2418,7 +2418,7 @@ vcfConcatenateVCFs = vcfConcatenateVCFs.dump(tag:'VCF to merge')
 
 process ConcatVCF {
     label 'concat_vcf'
-    label 'cpus_8'
+    cpus 1
 
     tag "${variantCaller}-${idSample}"
 
