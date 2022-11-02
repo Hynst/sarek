@@ -1256,7 +1256,7 @@ process MarkDuplicates {
     when: !(params.skip_markduplicates)
 
     script:
-    markdup_java_options = "-Xms 128g -Xmx 128g"
+    markdup_java_options = "\"-Xms128" + "g -Xmx128" + "g\""
     metrics = 'markduplicates' in skipQC ? '' : "-M ${idSample}.bam.metrics"
     if (params.use_gatk_spark)
     """
